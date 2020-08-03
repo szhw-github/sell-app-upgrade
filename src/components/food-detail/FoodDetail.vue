@@ -3,7 +3,7 @@
     <div v-show="showFlag" class="food" ref="food">
       <div class="food-content">
         <div class="image-header">
-          <img :src="food.image">
+          <img class="food-img" :src="food.image">
           <div class="back" @click="hide">
             <i class="icon-arrow_lift"></i>
           </div>
@@ -182,12 +182,13 @@
       width: 100%
       height: 0
       padding-top: 100%
-      img
+      .food-img
         position: absolute
         top: 0
         left: 0
         width: 100%
         height: 100%
+        object-fit cover
       .back
         position: absolute
         top: .5rem

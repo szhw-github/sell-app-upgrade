@@ -8,7 +8,9 @@ import 'stylus/reset.css'
 import 'stylus/border.css'
 import 'stylus/style.css'
 import FastClick from 'fastclick'
+import VueLazyload from 'vue-lazyload'
 
+Vue.use(VueLazyload)
 Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
 FastClick.attach(document.body)

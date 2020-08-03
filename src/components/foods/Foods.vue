@@ -14,14 +14,14 @@
           >
             <div class="link-to" @click="handleFoodClick(index_good,index_food)">
               <div class="img-wrapper">
-                <img class="food-img" :src="food.image">
+                <img class="food-img" v-lazy ="food.image">
               </div>
               <div class="content">
                 <div class="title">{{food.name}}</div>
                 <div class="description" v-show="food.description!==''">{{food.description}}</div>
                 <div class="sales">月售{{food.sellCount}}份 好评率{{food.rating}}% </div>
                 <div class="price">
-                  <span class="actual-price" :style="{fontSize: food.oldPrice ? '14px' : '10px'}">¥{{food.price}}</span>
+                  <span class="actual-price">¥{{food.price}}</span>
                   <span class="old-price" v-show="food.oldPrice">¥{{food.oldPrice}}</span>
                 </div>
               </div>
@@ -181,8 +181,6 @@
         .link-to
           display flex
           .img-wrapper
-            overflow hidden
-            flex 0 0 auto
             width 3rem
             height 3rem
             .food-img
