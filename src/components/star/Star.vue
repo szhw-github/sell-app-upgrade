@@ -1,9 +1,8 @@
 <template>
-    <div class="star-container" :style="container" v-if="score&&hasGetSize&&hasGetStarClass">
+    <div class="star-container" v-if="score&&hasGetStarClass">
       <div class="star"
            :class="['star'+size,item]"
            v-for="item in starClass"
-           :style="star"
       >
       </div>
     </div>
@@ -26,34 +25,10 @@
           onCount: 0,
           halfCount: 0,
           offCount: 0,
-          star: {
-            width: null,
-            height: null,
-            marginLeft: null,
-            marginRight: null,
-            backgroundSize: null,
-            backgroundRepeat: 'no-repeat'
-          },
-          container:{
-            width: null,
-            height: null
-          },
           starClass:[]
         }
       },
       computed: {
-        hasGetSize () {
-          const size = this.size + 'px'
-          const halfSize = this.size*0.5 + 'px'
-          this.star.width = size
-          this.star.height = size
-          this.star.marginLeft = halfSize
-          this.star.marginRight = halfSize
-          this.star.backgroundSize = [size, size]
-          this.container.width = 2*LENGTH*this.size +'px'
-          this.container.height = size
-          return true
-        },
         hasGetStarClass () {
           var onCount = parseInt(this.score)
           var halfCount = Math.round(this.score - onCount)
@@ -84,23 +59,50 @@
     background rgba(0,0,0,0)
     .on
       &.star24
-        bg-icon('star24_on')
+        width 1.2rem
+        height 1.2rem
+        margin-right .6rem
+        bg-img({p:0.4,positionX:0,positionY:-3})
       &.star36
-        bg-icon('star48_on')
+        width 1.8rem
+        height 1.8rem
+        margin-right .9rem
+        bg-img({p:0.6,positionX:0,positionY:-3})
       &.star48
-        bg-icon('star48_on')
+        width 2.4rem
+        height 2.4rem
+        margin-right 1.2rem
+        bg-img({p:0.8,positionX:0,positionY:-3})
     .half
       &.star24
-        bg-icon('star24_half')
+        width 1.2rem
+        height 1.2rem
+        margin-right .6rem
+        bg-img({p:0.4,positionX:-3,positionY:-3})
       &.star36
-        bg-icon('star48_half')
+        width 1.8rem
+        height 1.8rem
+        margin-right .9rem
+        bg-img({p:0.6,positionX:-3,positionY:-3})
       &.star48
-        bg-icon('star48_half')
+        width 2.4rem
+        height 2.4rem
+        margin-right 1.2rem
+        bg-img({p:0.8,positionX:-3,positionY:-3})
     .off
       &.star24
-        bg-icon('star24_off')
+        width 1.2rem
+        height 1.2rem
+        margin-right .6rem
+        bg-img({p:0.4,positionX:-6,positionY:-3})
       &.star36
-        bg-icon('star48_off')
+        width 1.8rem
+        height 1.8rem
+        margin-right .9rem
+        bg-img({p:0.6,positionX:-6,positionY:-3})
       &.star48
-        bg-icon('star48_off')
+        width 2.4rem
+        height 2.4rem
+        margin-right 1.2rem
+        bg-img({p:0.8,positionX:-6,positionY:-3})
 </style>

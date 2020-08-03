@@ -121,21 +121,18 @@
       .icon
         display inline-block
         vertical-align middle
-        width .6rem
-        height .6rem
+        width .8rem
+        height .8rem
         margin-right .2rem
-        background-size .6rem .6rem
-        background-repeat no-repeat
         &.decrease
-          bg-icon("decrease_3")
+          bg-img({p:1/3,positionX:-10,positionY:0})
         &.discount
-          bg-icon('discount_3')
+          bg-img({p:1/3,positionX:-12.5,positionY:0})
         &.guarantee
-          bg-icon('guarantee_3')
+          bg-img({p:1/3,positionX:-10,positionY:0})
         &.invoice
-          bg-icon('invoice_3')
+          bg-img({p:1/3,positionX:-10,positionY:0})
         &.special
-          bg-icon('special_3')
-
+          bg-img({p:1/3,positionX:-5,positionY:0})
 
 </style>

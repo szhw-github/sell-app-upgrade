@@ -141,7 +141,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-	@import "../../common/stylus/mixin"
+  @import "~stylus/mixins.styl"
 	.seller-wrapper
 		position: absolute
 		top: 8.7rem
@@ -233,21 +233,19 @@
 					.icon
 						vertical-align: top
 						display: inline-block
-						width: .6rem
-						height: .6rem
+						width: .8rem
+						height: .8rem
 						margin-right: .2rem
-						background-size: .6rem .6rem
-						background-repeat: no-repeat
 						&.decrease
-							bg-image("decrease_4")
+							bg-img({p:1/3,positionX:-10,positionY:0})
 						&.discount
-							bg-image("discount_4")
+							bg-img({p:1/3,positionX:-12.5,positionY:0})
 						&.guarantee
-							bg-image("guarantee_4")
+							bg-img({p:1/3,positionX:-10,positionY:0})
 						&.invoice
-							bg-image("invoice_4")
+							bg-img({p:1/3,positionX:-10,positionY:0})
 						&.special
-							bg-image("special_4")
+							bg-img({p:1/3,positionX:-5,positionY:0})
 		.pics-wrapper
 			padding: .9rem 0 .9rem .9rem;
 			.pics-list

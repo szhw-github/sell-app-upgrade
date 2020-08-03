@@ -61,8 +61,6 @@
 
 <style lang="stylus" scoped>
   @import "~stylus/mixins.styl"
-  .star-container
-    margin auto
   .container
     position fixed
     z-index 10
@@ -73,6 +71,10 @@
     text-align center
     color #fff
     background rgba(7,17,27,0.8)
+    >>> .star-container
+      position relative
+      margin-left 50%
+      transform translateX(-50%)
     .name
       margin-top 3.2rem
       margin-bottom .8rem
@@ -108,19 +110,17 @@
           .icon
             width .8rem
             height .8rem
-            background-size .8rem .8rem
             margin-right .3rem
-            background-repeat no-repeat
             &.decrease
-              bg-icon("decrease_1")
+              bg-img({p:1/3,positionX:-10,positionY:0})
             &.discount
-              bg-icon('discount_1')
+              bg-img({p:1/3,positionX:-12.5,positionY:0})
             &.guarantee
-              bg-icon('guarantee_1')
+              bg-img({p:1/3,positionX:-10,positionY:0})
             &.invoice
-              bg-icon('invoice_1')
+              bg-img({p:1/3,positionX:-10,positionY:0})
             &.special
-              bg-icon('special_1')
+              bg-img({p:1/3,positionX:-5,positionY:0})
           .text
             height .6rem
             font-size .5rem

@@ -130,7 +130,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/mixin.styl"
+  @import "~stylus/mixins.styl"
 
   .ratings
     position: absolute
@@ -177,7 +177,6 @@
             color: rgb(7, 17, 27)
           .star
             display: inline-block
-            margin: 0 .6rem
             vertical-align: top
           .score
             display: inline-block

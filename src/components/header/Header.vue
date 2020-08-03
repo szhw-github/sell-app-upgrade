@@ -91,9 +91,9 @@
           .brand
             width 1.5rem
             height .9rem
-            background-size 1.5rem .9rem
-            bg-icon("brand")
             margin-right .3rem
+            bg-img({p:1/3,positionX:0,positionY:-6})
+
           .name
             font-size .8rem
             font-weight bold
@@ -108,19 +108,9 @@
           .icon
             width .6rem
             height .6rem
-            background-size .6rem .6rem
             margin-right .2rem
-            background-repeat no-repeat
-            &.decrease
-              bg-icon("decrease_1")
-            &.discount
-              bg-icon('discount_1')
-            &.guarantee
-              bg-icon('guarantee_1')
-            &.invoice
-              bg-icon('invoice_1')
-            &.special
-              bg-icon('special_1')
+            bg-img({p:0.25,positionX:-10,positionY:0})
+
           .text
             height .6rem
             font-size .5rem
@@ -155,9 +145,7 @@
         width 1.1rem
         height .6rem
         align-items center
-        background-size 1.1rem .6rem
-        bg-icon("bulletin")
-        background-repeat no-repeat
+        bg-img({p:1/3,positionX:-6,positionY:-6})
       .bulletin
         margin 0 .2rem
         font-weight 200

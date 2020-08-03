@@ -77,7 +77,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/mixin.styl"
+  @import "~stylus/mixins.styl"
 
   .ratingselect
     .rating-type
