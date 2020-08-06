@@ -16,6 +16,11 @@
       VFoods,
       VMenu,
       DropBall
+    },
+    asyncData({
+      store
+    }) {
+      return store.dispatch('fetchData')
     }
   }
 </script>

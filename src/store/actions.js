@@ -1,13 +1,35 @@
-
+import axios from "axios"
 export default {
-  handleEvent (context, action) {
-    if (context.getters.foodsSelected.length)
-      context.commit('setShowShopcartDetail',action)
+  fetchData({
+    commit,
+    state
+  }) {
+    return new Promise((resolve, reject) => {
+      axios({
+          method: 'GET',
+          baseURL: 'http://127.0.0.1:9002/api/data.json',
+        })
+        .then(res => {
+          if (res) {
+            commit('setData',res.data)
+            commit('initCountList')
+            resolve(res.data)
+          } else {
+            reject('no data')
+          }
+        }).catch((err) => {
+          console.log(err)
+        })
+    })
   },
-  getTotalPrice (context) {
+  handleEvent(context, action) {
+    if (context.getters.foodsSelected.length)
+      context.commit('setShowShopcartDetail', action)
+  },
+  getTotalPrice(context) {
     context.state.totalPrice = 0
     let len = context.getters.foodsSelected.length
-    if (len){
+    if (len) {
       for (let k = 0; k < len; k++) {
         let item = context.getters.foodsSelected[k]
         let i = item.i
@@ -16,6 +38,6 @@ export default {
         let unit_price = context.state.goods[i].foods[j].price
         context.state.totalPrice += unit_price * count
       }
-  }
+    }
   }
 }

@@ -1,13 +1,20 @@
 import Vue from "vue"
 export default {
+  setData: (state, data) => {
+    state.seller = data.seller
+    state.goods = data.goods
+    state.ratings = data.ratings
+  },
   initCountList(state) {
-    state.initializedCountList = []
-    state.countList = []
-    if (state.goods.length) {
-      for (let i = 0; i < state.goods.length; i++) {
-        let foodsLength = state.goods[i].foods.length
-        state.initializedCountList.push(new Array(foodsLength).fill(0))
-        state.countList.push(new Array(foodsLength).fill(0))
+    if(!state.countList.length){
+      state.initializedCountList = []
+      state.countList = []
+      if (state.goods.length) {
+        for (let i = 0; i < state.goods.length; i++) {
+          let foodsLength = state.goods[i].foods.length
+          state.initializedCountList.push(new Array(foodsLength).fill(0))
+          state.countList.push(new Array(foodsLength).fill(0))
+        }
       }
     }
   },
@@ -17,25 +24,16 @@ export default {
     let count = data.count
     Vue.set(state.countList[i], j, count)
   },
-  changeCurrentIndex (state, currentIndex) {
+  changeCurrentIndex(state, currentIndex) {
     state.currentIndex = currentIndex
   },
-  changeClickIndex (state, index) {
+  changeClickIndex(state, index) {
     state.clickIndex = index
   },
   addCount(state, item) {
     state.countList.push(item)
   },
-  getGoods (state, goods) {
-    state.goods = goods
-  },
-  getSeller (state, seller) {
-    state.seller = seller
-  },
-  getRatings (state, ratings) {
-    state.ratings = ratings
-  },
-  setShowShopcartDetail (state,action) {
+  setShowShopcartDetail(state, action) {
     if (action === 'click') {
       state.showShopcartDetail = !state.showShopcartDetail;
     }
@@ -46,10 +44,10 @@ export default {
       state.showShopcartDetail = false
     }
   },
-  getElementClicked (state,element) {
+  getElementClicked(state, element) {
     state.elementClicked.push(element)
   },
-  getFoodClickedIndex (state, index) {
+  getFoodClickedIndex(state, index) {
     state.foodClickedIndex.i = index.i
     state.foodClickedIndex.j = index.j
     console.log(state.foodClickedIndex)

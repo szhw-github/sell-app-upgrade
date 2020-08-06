@@ -81,6 +81,7 @@ li {
 
 html, body {
   width: 100%;
+  font-size:100%
 }
 
 @media (max-width: 414px) {

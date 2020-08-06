@@ -72,8 +72,13 @@
         }
         this.$emit('toggle');
       }
+    },
+    asyncData({
+      store
+    }) {
+      return store.dispatch('fetchData')
     }
-  };
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">

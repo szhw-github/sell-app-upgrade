@@ -127,9 +127,11 @@
 				}
 			}
 		},
-		created() {
-
-		},
+    asyncData({
+      store
+    }) {
+      return store.dispatch('fetchData')
+    },
 		mounted() {
 			this._initScroll();
 			this._initPicList();
