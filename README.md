@@ -13,9 +13,9 @@
 ### 改造为SSR后的性能对比
 <br>scripting的解析速率提高为原来的3倍
 <br>
-<img src="https://github.com/szhw-github/sell-app-upgrade/raw/master/imgs/Vue-performance.png" width=400>
+<img src="https://github.com/szhw-github/sell-app-upgrade/raw/master/imgs/Vue-performance.png" width=600>
 <br>
-<img src="https://github.com/szhw-github/sell-app-upgrade/raw/master/imgs/VueSSR-performance.png" width=400>
+<img src="https://github.com/szhw-github/sell-app-upgrade/raw/master/imgs/VueSSR-performance.png" width=600>
 ### 自适应的对比图
 <br>非自适应效果图-Galaxy.png
 <br>
