@@ -1,6 +1,10 @@
 # sell-app
 
-> A Vue.js project
+> 对点餐APP新增自适应布局，并做了性能优化；
+> 技术栈：vue2 vue-router vuex koa webpack SSR 
+> 性能优化方法：
+>  1. 合并资源请求：使用Photoshop制作精灵图，合并了图标的资源请求；
+>  2. 
 
 ## Build Setup
 
